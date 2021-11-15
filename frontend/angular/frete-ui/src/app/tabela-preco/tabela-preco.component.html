@@ -1,0 +1,20 @@
+<table class="tabela">
+  <thead class="tabelacabecalho" >
+    <th class="tabelalinhacabecalho" >Faixa 1 (KM)</th>
+    <th class="tabelalinhacabecalho">Faixa 2 (KM) </th>
+    <th class="tabelalinhacabecalho">Valor (R$)</th>
+  </thead>
+  <tbody *ngIf="precos.length > 0; else listaVazia" >
+    <tr *ngFor="let preco of precos ">
+      <td class="tebelaconteudo" >{{ preco.faixa1 }}</td>
+      <td class="tebelaconteudo" >{{ preco.faixa2 }}</td>
+      <td class="tebelaconteudo" >{{ preco.valor | currency}}</td>
+    </tr>
+  </tbody>
+
+</table>
+
+<ng-template #listaVazia >
+  <p>Não existe preços</p>
+</ng-template>
+

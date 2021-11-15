@@ -1,0 +1,33 @@
+<section class="container">
+  <form class="formulario" (ngSubmit)="calcular()" >
+    <h2 class="titulo">Calcular Frete</h2>
+
+    <div class="form-field">
+      <label class="label" for="origem">Origem</label>
+      <input class="input" id="origem" type="text"  [(ngModel)]="origem" name="origem" />
+    </div>
+
+    <div class="form-field">
+      <label class="label" for="destino">Destino</label>
+      <input class="input" id="destino" type="text"  [(ngModel)]="destino" name="destino" />
+    </div>
+
+
+    <div *ngFor="let frete of fretes">
+    <div class="form-field">
+      <label class="label" for="valor">KM</label>
+      <label class="lbValor"> {{  frete.km | number  }} </label>
+    </div>
+
+    <div class="form-field">
+      <label class="label" for="valor">Valor</label>
+      <label class="lbValor" > {{ frete.valor | currency }} </label>
+    </div>
+
+  </div>
+
+    <div class="botao-wrapper">
+      <button>Calcular</button>
+    </div>
+  </form>
+</section>
